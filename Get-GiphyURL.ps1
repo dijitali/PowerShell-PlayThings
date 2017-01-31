@@ -3,7 +3,7 @@
     Param
     (
         [Parameter(Mandatory=$True)] 
-        [string] $SearchString = 'funny+cat'
+        [string] $SearchString
     )
      $stringMatch = $SearchString | Select-String -Pattern '[a-zA-Z0-9]+' -AllMatches
 
