@@ -16,6 +16,7 @@
         throw ('Invalid SearchString: ' + $SearchString)
     } 
     
+    Write-Verbose -Message ('Searching Giphy for: ' + $sanitisedSearchString)
     $giphyResponse = Invoke-RestMethod -Method Get -Uri ('http://api.giphy.com/v1/gifs/search?q=' + $sanitisedSearchString + '&api_key=dc6zaTOxFJmzC')  -ErrorAction Stop
     $index = Get-Random -Minimum 0 -Maximum $giphyResponse.data.Length
     
